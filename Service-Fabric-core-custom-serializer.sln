@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "Service_Fabric_core_custom_serializer", "Service-Fabric-core-custom-serializer\Service_Fabric_core_custom_serializer.sfproj", "{EE73EC6E-25ED-430C-A2F1-66677755D849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{99837691-6B38-440B-9F78-D4ACC38701DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE73EC6E-25ED-430C-A2F1-66677755D849}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{EE73EC6E-25ED-430C-A2F1-66677755D849}.Debug|x64.ActiveCfg = Debug|x64
+		{EE73EC6E-25ED-430C-A2F1-66677755D849}.Debug|x64.Build.0 = Debug|x64
+		{EE73EC6E-25ED-430C-A2F1-66677755D849}.Debug|x64.Deploy.0 = Debug|x64
+		{EE73EC6E-25ED-430C-A2F1-66677755D849}.Release|Any CPU.ActiveCfg = Release|x64
+		{EE73EC6E-25ED-430C-A2F1-66677755D849}.Release|x64.ActiveCfg = Release|x64
+		{EE73EC6E-25ED-430C-A2F1-66677755D849}.Release|x64.Build.0 = Release|x64
+		{EE73EC6E-25ED-430C-A2F1-66677755D849}.Release|x64.Deploy.0 = Release|x64
+		{99837691-6B38-440B-9F78-D4ACC38701DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99837691-6B38-440B-9F78-D4ACC38701DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99837691-6B38-440B-9F78-D4ACC38701DF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{99837691-6B38-440B-9F78-D4ACC38701DF}.Debug|x64.Build.0 = Debug|Any CPU
+		{99837691-6B38-440B-9F78-D4ACC38701DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99837691-6B38-440B-9F78-D4ACC38701DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99837691-6B38-440B-9F78-D4ACC38701DF}.Release|x64.ActiveCfg = Release|Any CPU
+		{99837691-6B38-440B-9F78-D4ACC38701DF}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91F6E23C-FBED-4CB4-BCBC-2204E5834F41}
+	EndGlobalSection
+EndGlobal
