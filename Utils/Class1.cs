@@ -1,12 +1,34 @@
 ﻿using Microsoft.ServiceFabric.Services.Remoting.V2;
 using Microsoft.ServiceFabric.Services.Remoting.V2.Messaging;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Utils
 {
+    class CustomSerializationBinder : DefaultSerializationBinder
+    {
+        public override void BindToName(Type serializedType, out string assemblyName, out string typeName)
+        {
+            typeName = serializedType.FullName;
+            assemblyName = serializedType.Assembly.FullName;
+        }
+
+        public override Type BindToType(string assemblyName, string typeName)
+        {
+            Type type = null;
+            if (assemblyName.Contains("_.service.mt"))
+            {
+                var assembly = AppDomain.CurrentDomain.GetAssemblies().
+                    FirstOrDefault(a => a.FullName == assemblyName || a.GetName().Name == assemblyName);
+                type = assembly?.GetType(typeName);
+            }
+            return type ?? base.BindToType(assemblyName, typeName);
+        }
+    }
     public class ServiceRemotingJsonSerializationProvider : IServiceRemotingMessageSerializationProvider
     {
         public IServiceRemotingMessageBodyFactory CreateMessageBodyFactory()
@@ -45,7 +67,8 @@ namespace Utils
         {
             serializer = JsonSerializer.Create(new JsonSerializerSettings()
             {
-                TypeNameHandling = TypeNameHandling.All
+                TypeNameHandling = TypeNameHandling.All,
+                SerializationBinder = new CustomSerializationBinder()
             });
         }
 
@@ -89,7 +112,8 @@ namespace Utils
         {
             serializer = JsonSerializer.Create(new JsonSerializerSettings()
             {
-                TypeNameHandling = TypeNameHandling.All
+                TypeNameHandling = TypeNameHandling.All,
+                SerializationBinder = new CustomSerializationBinder()
             });
         }
 

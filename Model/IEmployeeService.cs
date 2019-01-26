@@ -11,5 +11,6 @@ namespace Model
     {
         Task<List<Employee>> GetAllEmployees();
         Task<Employee> GetEmployeeById(int Id);
+        Task<Result<string>> SaveEmployee(Employee employee);
     }
 }

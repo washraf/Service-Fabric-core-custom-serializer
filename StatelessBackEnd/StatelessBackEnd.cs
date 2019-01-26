@@ -63,6 +63,18 @@ namespace StatelessBackEnd
 
         }
 
+        public async Task<Result<string>> SaveEmployee(Employee employee)
+        {
+            return await Task.Run(() =>
+            {
+                return new Result<string>()
+                {
+                    Value = "Walid",
+                    otherValue = "Other",
+                };
+            });
+        }
+
         /// <summary>
         /// Optional override to create listeners (e.g., TCP, HTTP) for this service replica to handle client or user requests.
         /// </summary>

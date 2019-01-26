@@ -47,8 +47,9 @@ namespace Web.Controllers
 
         // POST: api/Employee
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<Result<string>> Post([FromBody] Employee employee)
         {
+            return await proxy.SaveEmployee(employee);
         }
 
         // PUT: api/Employee/5
